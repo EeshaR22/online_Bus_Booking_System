@@ -1,0 +1,80 @@
+mysql> show tables;
++-----------------+
+| Tables_in_bus   |
++-----------------+
+| admin_login     |
+| bus_booked_list |
+| bus_list        |
+| bus_schedule    |
+| location_list   |
+| user            |
++-----------------+
+6 rows in set (0.13 sec)
+
+mysql> desc admin_login;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| admin_id | bigint       | NO   | PRI | NULL    | auto_increment |
+| password | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+2 rows in set (0.17 sec)
+
+mysql> desc bus_booked_list;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | bigint       | NO   | PRI | NULL    | auto_increment |
+| amount | varchar(255) | YES  |     | NULL    |                |
+| name   | varchar(255) | YES  |     | NULL    |                |
+| qty    | varchar(255) | YES  |     | NULL    |                |
+| ref_no | varchar(255) | YES  |     | NULL    |                |
+| status | varchar(255) | YES  |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+6 rows in set (0.09 sec)
+
+mysql> desc bus_list;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | bigint       | NO   | PRI | NULL    | auto_increment |
+| bus_name   | varchar(255) | YES  |     | NULL    |                |
+| bus_number | int          | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc bus_schedule;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | bigint       | NO   | PRI | NULL    | auto_increment |
+| availability | varchar(255) | YES  |     | NULL    |                |
+| bus          | varchar(255) | YES  |     | NULL    |                |
+| date         | varchar(255) | YES  |     | NULL    |                |
+| departure    | varchar(255) | YES  |     | NULL    |                |
+| location     | varchar(255) | YES  |     | NULL    |                |
+| price        | varchar(255) | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.04 sec)
+
+mysql> desc location_list;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | bigint       | NO   | PRI | NULL    | auto_increment |
+| city     | varchar(255) | YES  |     | NULL    |                |
+| province | varchar(255) | YES  |     | NULL    |                |
+| terminal | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc user;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| username | varchar(255) | NO   | PRI | NULL    |       |
+| person   | varchar(255) | YES  |     | NULL    |       |
+| name     | varchar(255) | YES  |     | NULL    |       |
+| password | varchar(255) | YES  |     | NULL    |       |
+| token    | varchar(255) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
